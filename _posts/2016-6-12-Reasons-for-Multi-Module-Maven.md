@@ -26,13 +26,12 @@ If you have a QA engineering team writing integration tests then having an api m
 
 Share these modules with your QA team or SDK group as follows:
 
-```
+
        <dependency>
          <groupId>com.example</groupId>
          <artifactId>service-groupA</artifactId>
          <version>${your-version-number}</version>
        </dependency>
-```
 
 
 ### *-impl modules
