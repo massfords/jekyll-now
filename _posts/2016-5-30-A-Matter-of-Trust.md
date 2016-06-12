@@ -1,5 +1,6 @@
 ---
 published: true
+layout: post
 ---
 The JSSE [TrustManager](https://docs.oracle.com/javase/8/docs/api/javax/net/ssl/TrustManager.html) is used to establish trust with peer when making an TLS/SSL connection. The only implementation I've ever worked with is the [X509TrustManager](https://docs.oracle.com/javase/8/docs/api/javax/net/ssl/X509TrustManager.html) which uses X509 certificates to establish trust. Typically, applications are deployed with a TrustStore which contains one or more certificate chains and when making a connection, they'll accept any of the certs from that store or ones they see that are signed by certificates in the store.
 
