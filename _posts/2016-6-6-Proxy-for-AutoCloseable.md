@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 ---
 I was recently reminded of a [SO answer](http://stackoverflow.com/questions/8431755/can-java-ee-7s-core-interfaces-entitymanager-extend-autoclosable/18360526#18360526) I posted a while ago in response to a user asking about making Java 7's JPA core interfaces extend AutoCloseable. I thought I'd post a little bit of the code here for future reference.
