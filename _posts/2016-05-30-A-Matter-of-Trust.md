@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## TrustManager
 
@@ -202,4 +202,3 @@ Unfortunately, you have to write a little code to do this. It's basically just r
         chain.toArray(retval);
         return retval;
     }
-
