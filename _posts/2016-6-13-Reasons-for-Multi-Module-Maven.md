@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 ---
 I've found myself settling on a multi-module maven structure for my web-apps as a matter of habit. The [Maven Book](https://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-best-practice.html) offers an introduction to the multi-module structure in its Best Practices section but it's quite dense and a lot to get through. The [Apache Maven tutorial](http://www.codetab.org/apache-maven-tutorial/maven-multi-module-project/) offers a gentler introduction. There's also some good SO questions on this topic which show some [strong opinions about complexity](http://stackoverflow.com/questions/15559041/maven-multi-module-benefits-over-simple-dependency) and raise some good points about [versioning](http://programmers.stackexchange.com/questions/194674/should-we-use-a-maven-multi-module-project-in-our-scenario). I arrived at this structure slowly over time so I thought I'd provide a few simple points on why I prefer this for my web-apps.
@@ -79,11 +79,3 @@ This is the exact same steps as the "Extract Utility Module" above except that y
 #### Ostrich Algorithm
 
 Accept the multiple versions. Disk space is cheap.
-
-
-
-
-
-
-
-
