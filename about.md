@@ -2,14 +2,13 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
 
-Some information about you!
+My name is Mark Ford and I'm a software engineer in the Greater Boston Area. I've worked mostly at software product companies for the last 20 years. Recently I've been working as a Graduate Teaching Assistant at The Harvard Extension School. 
 
-### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
 
-### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+
+
