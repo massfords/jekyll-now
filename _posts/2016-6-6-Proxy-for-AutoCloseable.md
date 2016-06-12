@@ -40,11 +40,9 @@ Our implementation for an AutoCloseableEntityManager in the old days would look 
     
 This is a straightforward approach but it's tedious since in many cases there's a lot of code you need to write to implement the pass through. It's also something that you need to do at design time whereas you can create a proxy instance at runtime using the method below.
 
-### Life After Proxy
-
 ## Example in your code
 
-The details below look scary, but here's a sneakpeek at the payoff...
+The details for creating a Proxy below look scary, but here's a sneakpeek at the payoff...
 
     public MyManualJPAClass {
         private final AutoCloseableEntityManagerFactory emf;
@@ -64,6 +62,9 @@ The details below look scary, but here's a sneakpeek at the payoff...
             }
         }
     }
+
+
+### Life After Proxy
 
 
     
