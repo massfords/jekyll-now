@@ -25,6 +25,7 @@ Putting these service interfaces into ther own modules creates a nice encapsulat
 If you have a QA engineering team writing integration tests then having an api module that you can share with them helps them along in writing their tests since the interfaces could be invoked directly through Apache CXF's client REST proxy. These modules could also be shared with internal or external customers through an SDK since they only contain the interfaces for the services and not the implementations. 
 
 Share these modules with your QA team or SDK group as follows:
+
 ```
        <dependency>
          <groupId>com.example</groupId>
