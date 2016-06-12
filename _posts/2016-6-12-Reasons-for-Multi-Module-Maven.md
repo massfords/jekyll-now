@@ -14,15 +14,25 @@ I've found myself settling on a multi-module maven structure for my web-apps as 
     myapp-web-ui/
     pom.xml
     
-The directory structure above has 8 modules in it plus the parent pom that brings them all together. See the [tutorial](http://www.codetab.org/apache-maven-tutorial/maven-multi-module-project/) for details on the relationship between the modules and their parent.
+The directory structure above has 6 child modules in it plus the parent pom that brings them all together. See the [tutorial](http://www.codetab.org/apache-maven-tutorial/maven-multi-module-project/) for details on the relationship between the modules and their parent.
 
 ### *-api modules
 
-I like defining my REST services with annotated Java interfaces and will put these interfaces and their request/response objects into api modules. The two modules above `service-groupA-api` and `service-groupB-api` represent a logical grouping of two sets of non-overlapping services. If there's any shared code between them then they might have a dependency on the `service-common-api` module.
+I like defining my REST services with annotated Java interfaces and will put these interfaces and their request/response objects into api modules. The two modules above `service-groupA-api` and `service-groupB-api` represent a logical grouping of two sets of non-overlapping services. If there's any shared code between them then they might have a dependency on a `service-common-api` module (not shown).
 
 Putting these service interfaces into ther own modules creates a nice encapsulation of the service interface. It reminds me of the good old days of WSDL when there was a single artifact to define your interface. This same artifact can be achieved with an annotated Java interface and this packaging puts it into its own module.
 
 If you have a QA engineering team writing integration tests then having an api module that you can share with them helps them along in writing their tests since the interfaces could be invoked directly through Apache CXF's client REST proxy. These modules could also be shared with internal or external customers through an SDK since they only contain the interfaces for the services and not the implementations. 
+
+Share these modules with your QA team or SDK group as follows:
+```
+       <dependency>
+         <groupId>com.example</groupId>
+         <artifactId>service-groupA</artifactId>
+         <version>${your-version-number}</version>
+       </dependency>
+```
+
 
 ### *-impl modules
 
