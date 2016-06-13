@@ -1,5 +1,6 @@
 ---
 layout: default
+published: true
 ---
 
 <div class="posts">
@@ -7,6 +8,7 @@ layout: default
     <article class="post">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <h3>{{post.date}}</h3>
 
       <div class="entry">
         {{ post.excerpt }}
