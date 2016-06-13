@@ -33,9 +33,9 @@ These are the implementations of the services. Again, the assumption here is tha
 
 I like to separate the actual UI files for the web-app to its own module and often times to its own top level module. I'm showing it as another child module here but I've found that the tools to build a web ui application like AngularJS or similar is very different than a Java application so it may make sense for you to kick this out to its own top level module.
 
-One plus of having it as a separate module is that the UI guys never need to both building/checking out the whole web app. They can work locally with mock services and develop the entire web application UI independent of the server if they choose.
+One plus of having it as a separate top level module is that the UI guys never need to build or even check out the whole web app. They can work locally with mock services and develop the entire web application UI independent of the server if they choose.
 
-Whichever style you choose, this module will ultimately produce a WAR that contains just the HTML/JS and other supporting files for the web app UI. It's important that it's a WAR because we'll use the maven-war-plugin overlay feature in order to merge this into our web-app
+Whichever style you choose, this module will ultimately produce a WAR that contains just the HTML/JS and other supporting files for the web app UI. It's important that it's a WAR because we'll use the [maven-war-plugin overlay](http://maven.apache.org/plugins/maven-war-plugin/overlays.html) feature in order to merge this into our web-app
 
 ### web module
 
@@ -55,7 +55,7 @@ Your build fails due to a cycle. Module A depends on module B which depends on m
 
 You wouldn't have this problem if all of the code were in the same module. However, that's really only hiding your problem. In reality, your code is failing Uncle Bob's [Acycilc Dependencies Principle](https://en.wikipedia.org/wiki/Acyclic_dependencies_principle).
 
-You can fix this by moving some of the code to a new module which is then shared between the two. If this is difficult to do, then your code is more tangled then it should be and you should refactor before trying to move to a multi-module project.
+You can fix this by moving some of the code to a new module which is then shared between the two. If this is difficult to do, then your code is more tangled than it should be and you should refactor before trying to move to a multi-module project.
 
 Sadly, I've hit build cycles more than a few times. 
 
@@ -75,7 +75,7 @@ If the module in question has some value across other projects, then extract it 
 
 This is the exact same steps as the "Extract Utility Module" above except that you recognize that this module has no value outside of your project. You're only extracting it to a top level module because of the version number concerns. 
 
-> Don't do this, it's silly
+In this case, the module may represent some aspect that doesn't change often. Perhaps it's part of the core infrastructure or an algorithm that doesn't version at nearly the same rate as the rest of the application and its new features or bug fixes. Having this as a separate module makes sense even if there's no chance for reuse outside of your application. 
 
 #### Ostrich Algorithm
 
