@@ -51,7 +51,11 @@ Add the CXF Feature to your context. You can provide additional values to overri
     
 ## One Important Detail
 
-I found the most important difference with the recent version of swagger was using a different package name for my service interfaces from my implementations. I found that if I used the same package name for the implementation and the interface, the swagger CXF feature would find both during the discovery phase and it wouldn't render the swagger interface correctly.
+I found the most important difference with the recent version of swagger was using a different package hieararchy for my service interfaces from my implementations. I found that if I used the same package name for the implementation and the interface, the swagger CXF feature would find both during the discovery phase and it wouldn't render the swagger interface correctly.
 
-This is meaningful if you use Java interfaces as artifacts and a separate implementation without the JAX-RS annotations. I'll post about this another time but suffice to say for now, I have a single Java interface with all of my JAX-RS annotations and it's in a separate package than the implementation because of this issue in CXF/Swagger with loading the API details.
+### Separate package hierarchy
 
+`com.example.services.api.foo.FooService` -> This is where the interface lives
+`com.example.services.foo.FooServiceImpl` -> This is where the implementation lives
+
+This is meaningful if you use Java interfaces as artifacts and a separate implementation without the JAX-RS annotations. I'll post about this another time. If you only have classes for your services, then you don't need to do this separation.
