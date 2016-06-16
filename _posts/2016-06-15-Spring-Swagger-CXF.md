@@ -41,6 +41,7 @@ Add the CXF Feature for Swagger to your jaxrs:server
     </jaxrs:features>
 </jaxrs:server>
 ```
+
 ## CXF Feature
 
 Add the CXF Feature to your context. You can provide additional values to override the default settings in swagger. 
