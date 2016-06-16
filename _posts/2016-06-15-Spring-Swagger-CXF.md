@@ -10,6 +10,7 @@ Here's how I got swagger working with CXF along with one gotcha.
 ## maven dependency
 
 Add the latest version of swagger and CXF to your project's dependencies
+
 ```xml
     <dependency>
        <groupId>io.swagger</groupId>
