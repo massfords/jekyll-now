@@ -15,7 +15,7 @@ I use IntelliJ's shortcut for generating getters and setters for my classes all 
 
 ### Start with a class that needs getters / setters
 
-```
+```java
     public class MySimpleClass {
         private String name;
         private int number;
@@ -57,7 +57,7 @@ The next time you launch this dialog it'll remember your settings and your gette
 
 When you run these generators on the sample class above, you'll get the following output:
 
-```
+```java
 import javax.annotation.Generated;
 
 public class MySimpleClass {
