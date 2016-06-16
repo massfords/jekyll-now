@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 I use IntelliJ's shortcut for generating getters and setters for my classes all the time. Since this code is generated, I like to mark it as such with an @Generated annotation. 
 
