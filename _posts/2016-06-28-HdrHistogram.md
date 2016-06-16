@@ -1,5 +1,7 @@
 ---
 published: false
+layout: post
+title: Fun with HdrHistogram
 ---
 A colleague recently schooled me on performance testing with some links to [posts](http://bravenewgeek.com/everything-you-know-about-latency-is-wrong/) and [videos](https://www.youtube.com/watch?v=lJ8ydIuPFeU) about Gil Tene's "[coordinated omission](https://www.quora.com/In-Java-what-is-Coordinated-Omission)" problem. I started incorporating the [HdrHistogram](https://github.com/HdrHistogram/HdrHistogram) library into my analysis of performance results and while there are some helpful intros into how to use this library and visualize the results, I didn't find a detailed explanation into what the raw data was so I've added a note here.
 
