@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 ---
 I seem to be in the shrinking minority of people that still use [Apache CXF](http://cxf.apache.org). I used this library in my SOAP / Web Services days and it seemed like a natural choice for my foray into REST. One problem though is that a lot of the latest cool libraries like [swagger](http://swagger.io) are focused on [Jersey](https://jersey.java.net) and ignore CXF in favor of detailed confg walk thrus for dropwizard/Jersey.
