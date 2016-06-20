@@ -346,7 +346,7 @@ Note that if you include "password" in the variable name then Bamboo will mask i
 
 The job consists of a source repo task that pulls the pom.xml in from your repo and then executes the Maven task. We'll run clean package and then have one -D param for each of the variables. These variables are defined in the Bamboo.
 
-Note: using the source repository task is a simple way of kicking this job off but you may want to replace that something that pulls the pom.xml from your repo instead. This would remove the undesirable connection to the source in order to avoid kicking off every Veracode related job in the event that you tweak one of the settings in the shared POM.
+Note: You should probably disable Repository Polling for your repo where the generic POM is stored. You don't want to have a build storm of Veracode submissions if you wind up making a manual change. This should be a manual process.
 
 
 ## Running a Customized Plan
