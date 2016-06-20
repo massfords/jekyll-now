@@ -28,7 +28,7 @@ Make sure you right click in the body of the class and not outside of it. If you
 
 ### Select Getters / Setters
 
-![generate-menu.png]({{site.baseurl}}/_posts/generate-menu.png)
+![generate-menu.png]({{site.baseurl}}/assets/generate-menu.png)
 
 
 

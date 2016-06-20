@@ -33,7 +33,7 @@ Notice that the service interface above uses Swagger's `@ApiImplicitParams`. Thi
 
 I'm using swagger-ui version `2.1.8-M1` which will respects the `@ApiParam` hidden attribute and hides the regular params in favor of the implicit params with the additional metadata.
 
-![Swagger_UI.png]({{site.baseurl}}/_posts/Swagger_UI.png)
+![Swagger_UI.png]({{site.baseurl}}/assets/Swagger_UI.png)
 
 Notice how the file param is modeled as a file upload and the string is modeled as a simple text field.
 

@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Deploying to Veracode with Bamboo
 ---
@@ -30,11 +30,11 @@ I'll review each of the steps for the build below and then show the whole pom at
 Add the dependency that was deployed to your local maven repo with the proper coordinate as below:
 
 ```xml
-        <dependency>
-            <groupId>com.veracode</groupId>
-            <artifactId>VeracodeJavaAPI</artifactId>
-            <version>16.3.3.0</version>
-        </dependency>
+<dependency>
+    <groupId>com.veracode</groupId>
+    <artifactId>VeracodeJavaAPI</artifactId>
+    <version>16.3.3.0</version>
+</dependency>
 ```
 
 Use the `maven-dependency-plugin` to download the jar and place it in the target directory so we can use it to run the veracode deployment of your artifact.
@@ -335,14 +335,14 @@ You can easily add a plan like this to other projects as well. All you need to d
 
 ### Define Bamboo Variables
 
-![bamboo-vars.png]({{site.baseurl}}/_posts/bamboo-vars.png)
+![bamboo-vars.png]({{site.baseurl}}/assets/bamboo-vars.png)
 
 Note that if you include "password" in the variable name then Bamboo will mask its value.
 
 
 ### Define the Job
 
-![maven-task.png]({{site.baseurl}}/_posts/maven-task.png)
+![maven-task.png]({{site.baseurl}}/assets/maven-task.png)
 
 The job consists of a source repo task that pulls the pom.xml in from your repo and then executes the Maven task. We'll run clean package and then have one -D param for each of the variables. These variables are defined in the Bamboo.
 
@@ -353,6 +353,6 @@ Note: using the source repository task is a simple way of kicking this job off b
 
 Bamboo allows you to run a customized plan. This is an easy way to changing one of the baked in variables w/o having to mess with the properties view or otherwise edit the plan.
 
-![override-var.png]({{site.baseurl}}/_posts/override-var.png)
+![override-var.png]({{site.baseurl}}/assets/override-var.png)
 
 The dialog above shows overriding the version in order to pull a different version than the one specified in the plan.

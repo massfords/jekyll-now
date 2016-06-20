@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Fun with HdrHistogram
 ---
@@ -147,7 +147,7 @@ There's a great online tool for plotting your results using Google's charting AP
 
 > I've also incorporated these plots into my build results but that's another post.
 
-![hdrhistogram_github_io_HdrHistogram_plotFiles_html.png]({{site.baseurl}}/_posts/hdrhistogram_github_io_HdrHistogram_plotFiles_html.png)
+![hdrhistogram_github_io_HdrHistogram_plotFiles_html.png]({{site.baseurl}}/assets/hdrhistogram_github_io_HdrHistogram_plotFiles_html.png)
 
 ### Y Axis
 
