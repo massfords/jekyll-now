@@ -127,6 +127,7 @@ The properties above are a child of your `<project>` element. I've defined these
 
 The plugin definition below invokes ant to simply dump the properties available to the ant processor as a way of ensuring that the POM is configured correctly. Note how there are mappings for the Top Level Maven Properties to bring them into the ant task.
 
+```xml
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-antrun-plugin</artifactId>
@@ -156,6 +157,7 @@ The plugin definition below invokes ant to simply dump the properties available 
         </execution>
     </executions>
 </plugin>
+```
 
 You may notice something odd with the echoproperties output. If you override one of the default properties with a -D command line override then you'll see that Maven Top Level Properties always appear to have their default values while the antrun properties will correctly see the overidden value.
 
@@ -354,5 +356,3 @@ Bamboo allows you to run a customized plan. This is an easy way to changing one 
 ![override-var.png]({{site.baseurl}}/_posts/override-var.png)
 
 The dialog above shows overriding the version in order to pull a different version than the one specified in the plan.
-
-
