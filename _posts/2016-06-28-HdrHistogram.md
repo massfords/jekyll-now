@@ -7,14 +7,14 @@ A colleague recently schooled me on performance testing with some links to [post
 
 ## Create the Histogram Class
 
-Which instance you pick and the values you pass to you it depend on your needs. In my case, I have a few threads running concurrently so I used the atomic version to avoid issues in recording samples concurrently.
+Which instance you pick and the values you pass to it depend on your needs. In my case, I have a few threads running concurrently so I used the atomic version to avoid issues in recording samples concurrently.
 
 
 ```java
 private final Histogram histogram = new AtomicHistogram(TimeUnit.MINUTES.toNanos(5), 3);
 ```
 
-When creating the instance, you choose the range that you want to support and the level of precision. The samples I'm recording should be in the 1-2 second range on average so I pass in a cap of 5 minutes as the maximum value we'll record. 
+When creating the instance, you choose the range that you want to support and the level of precision. The samples I'm recording should be in the 1-2 second range on average with outliers at 5x to 10x maximum so I pass in a cap of 5 minutes as the maximum value we'll record. 
 
 ## Record your samples
 
@@ -155,6 +155,8 @@ Recall that the samples were scaled to microseconds so you should label the Y Ax
 
 ### X Axis
 
-The X Axis is the percentile for the test. The actual value used for the X is the 1/(1-Percentile) column which is a nice way of converting small differences in the increasing precision into something that can be plotted. 
+The X Axis is the percentile for the test. The actual value used for the X is the 1/(1-Percentile) column which is a nice way of converting small differences in the increasing precision into something that can be plotted.
 
+## Conclusion
 
+Read through the links above to Gil's articles and videos, it's great material. The key thing for me was to understand the form of the data being recorded. Hopefully you have a better understanding of it now as well.
