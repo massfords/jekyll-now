@@ -18,7 +18,7 @@ The use of Jetty allows you to test your webservices exactly as they would be de
 
 You need to add a couple of dependencies to your web module in order for this to work. The most recent version of a stable Jetty at the time of this writing is `9.3.10.v20160621`. Your mileage may vary with the `9.4.x` versions.
 
-```
+```xml
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-server</artifactId>
@@ -41,7 +41,7 @@ The following fixture will launch an instance of Jetty that's setup to serve you
 - webappDir: reference to the webapp directory 
 - contextpath: context path that the web app will be accessible on
 
-```
+```java
 public class JettyWebAppRunner {
     private final Server server;
     private final WebAppContext context;
@@ -82,7 +82,7 @@ Your test suite should construct and start the JettyWebAppRunner in its `@Before
 
 The service in this case is an overly simplified example to demonstrate how to invoke services with this framework. It contains a single `@GET` and a simple POJO that's converted to JSON when invoked. 
 
-```
+```java
 public class HelloWorldServiceImpl implements HelloWorldService {
     public Greeting hello() {
         return new Greeting().setMessage("Hello from Spring JAX-RS service");
@@ -94,7 +94,7 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
 Greeting is also a simple POJO. It's converted to JSON via the Jackson library, the configuration of which is not shown here.
 
-```
+```java
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Greeting {
     private String message;
@@ -115,7 +115,7 @@ public class Greeting {
 ## Test Class Example
 Here's a toy example of a test against a web service:
 
-```
+```java
 public class WebAppTest {
 
     private JettyWebAppRunner runner;
@@ -174,5 +174,3 @@ I've found it very easy to recreate bugs through various service calls in an int
 ### Better Code Coverage
 
 You can achieve better code coverage with this approach. Again, since it's all running within the same JVM, code coverage tools like Coverity and Cobretura have an easy time of recording the service method invocations from your test code. This would be more difficult to aggregate the results if you were running against a remote server.
-
-
