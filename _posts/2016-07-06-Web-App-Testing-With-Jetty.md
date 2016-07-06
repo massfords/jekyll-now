@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 ---
 Jetty is a great way of testing your web-apps that are destined for a simple web server as opposed to a J2EE server. If you're deploying to an app server like JBOSS then you should check out [Arquillian](http://arquillian.org/guides/getting_started/) but if you're deploying to Tomcat or Jetty then you should look into Jetty for your testing.
