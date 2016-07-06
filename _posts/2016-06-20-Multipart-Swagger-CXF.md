@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Multipart Upload with Swagger and CXF
 ---
@@ -93,5 +93,3 @@ ImportedFiles importZip(@ApiParam(hidden=true)
                       @Multipart(value = "patterns", required = true) String patterns);
 
 ```
-
-
