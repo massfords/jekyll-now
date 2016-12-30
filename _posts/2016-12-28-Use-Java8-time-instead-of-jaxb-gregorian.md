@@ -84,8 +84,9 @@ public class LocalDateAdapter extends XmlAdapter<String,LocalDate> {
     }
 }
 ```
+
 ## What about other types?
 
-You can follow the above templates and add a mapping and adapter for `xs:dateTime` to map them to a `LocalDateTime`. This is simply a copy/paste/replace `LocalDateTime` for 
-`LocalDate`. However, if your application has actual `xs:dateTime` which refer to a specific instant in time that requires a timezone then my suggestion is to explicitly model this as its own extension of `xs:dateTime` which will allow you to add a mapping targeted at just these occurrences. The value of having an explicit type is that you'll always know when an `xs:dateTime` refers to a dateTime with a timezone offset as opposed to a timezone free `xs:dateTime`.
+You can follow the above templates and add a mapping and adapter for `xs:dateTime` to map them to a `LocalDateTime`. This is simply a copy/paste/replace 
+`LocalDateTime` for  `LocalDate`. However, if your application has actual `xs:dateTime` which refer to a specific instant in time that requires a timezone then my suggestion is to explicitly model this as its own extension of `xs:dateTime` which will allow you to add a mapping targeted at just these occurrences. The value of having an explicit type is that you'll always know when an `xs:dateTime` refers to a dateTime with a timezone offset as opposed to a timezone free `xs:dateTime`.
 
