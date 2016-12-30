@@ -9,7 +9,7 @@ This type lacks the semantics of what the underlying data type really is. The bi
 
 The `@XmlSchemaType` attribute conveys whether the underlying schema type is an `xs:date` or `xs:dateTime` but this isn't enforced in the generated code and in fact some popular frameworks like [Jackson](http://wiki.fasterxml.com/JacksonJAXBAnnotations) simply ignore the `@XmlSchemaType` annotation and marshal the value as a full ISO 8601 date and time which isn't great when you want a simple yyyy-mm-dd value.
 
-Consider something like a person's birthday. This is probably best modeled as a `LocalDate`. We don't need a specific timezone offset nor do we need a specific time. **If someone asks you're birthday, you're unlikely to provide a time, it's just the date.**
+Consider something like a person's birthday. This is probably best modeled as a `LocalDate`. We don't need a specific timezone offset nor do we need a specific time. **If someone asks your birthday, you're unlikely to provide a time, it's just the date.**
 
 It's also possible that our data model could have a `xs:dateTime` that's not tied to a specific timezone. Maybe it's a restaurant chain's offer that has drink or food specials on a specifc date from 4pm - 6pm. The fields for this object wouldn't need to include a timezone. We only want the local date and time.
 
