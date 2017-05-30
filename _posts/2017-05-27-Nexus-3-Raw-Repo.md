@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 layout: post
 title: Nexus 3 Raw Maven Repository
 ---
